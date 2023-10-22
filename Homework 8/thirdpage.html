@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>My Contact Us Page</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+       <script>
+        function validation()
+        {
+            var count=0;
+            var firstName = document.getElementById("fName").value;
+            if(firstName == "")
+            {
+                document.getElementById("fName").style.backgroundColor = "red";
+                document.getElementById("fName").focus();
+            }
+            else { count++;}
+            
+            var lastName = document.getElementById("lName").value;
+            if (lastName == "")
+            {
+                document.getElementById("lName").style.backgroundColor = "red";
+                document.getElementById("lName").focus();
+            }
+            else {count++;}
+
+            var address = document.getElementById("emailAddress").value;
+            if(address == "")
+            {
+                document.getElementById("emailAddress").style.backgroundColor = "red";
+                document.getElementById("emailAddress").focus();
+            }
+            else{count++;}
+
+            var chk = document.getElementById("termChkbx");
+            if(chk.checked)
+            {
+                chk.parentElement.style.color = "black";
+                count++;
+            }
+            else{
+                chk.parentElement.style.color = "red";
+                window.alert("Please accept Terms and Conditions to proceed.")
+            }
+            
+            if (count == 4)
+           window.alert("Thank you, " + firstName + " " + lastName +", for reaching out to us. Please check " + address + " for your confirmation email.")
+        }
+    
+       
+       </script>
+    </head>
+    <body style="background-color: #8EC5FC; background-image: linear-gradient(152deg, #8EC5FC 0%, #E0C3FC 100%);">
+        <div style="margin-left: 35px;"></div>
+            <h1>Contact Us</h1>
+            <p></p>
+            
+
+   <label>First Name: <input type="text" id="fName"></label><br>
+    <label>Last Name: <input type="text" id="lName"></label><br>
+    <label>EmaiL Address: <input type="text" id="emailAddress"></label><br>
+    <label><input type="checkbox" id="termChkbx" >
+        <label for="termChkbx">I agree to <a target="_blank" href="terms.html">Terms and Conditions</a></label><br><br>
+    <button id="mySubmit" class="btn btn-primary" onclick='validation();' >Submit</button>
+<br><br>
+<p><a href="homepage.html">Home</a><br>
+<a href="secondpage.html">Short Story</a></p>
+    </body>
+</html>
